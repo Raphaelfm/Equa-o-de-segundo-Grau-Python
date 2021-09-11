@@ -1,0 +1,42 @@
+#Como haverá a necessidade de utilizar a raiz quadrada importaremos a biblioteca math
+import math
+#Declarando as varáveis necessárias para o programa
+a = float
+b = float
+c = float
+delta = float
+x = float
+x1 = float
+x2 = float
+
+#Recebendo os dados dos usuários, as variáveis foram criadas anteriormente,
+#mas poderiam ter sido criadas no momento de receber os dados
+
+a = float(input('Digite o valor de A: '))
+#Coloquei uma estrutura para verificar se o usuário não digitou um valor inválido para A
+#O valor de á deve ser diferente de 0
+while (a == 0):
+    print('O valor de A não pode ser 0')
+    a = float(input('Digite o valor de A: '))
+
+b = float(input('Digite o valor de B: '))
+c = float(input('Digite o valor de C: '))
+
+#Após receber os dados, temos o cálculo de Delta
+delta = ((b ** 2) - 4 * a * c)
+print('O valor de delta é = ', delta)
+
+#Aqui checamos se delta é menor que 0
+#Se delta é = 0
+#Caso não se enquade nas condições anteriores, o sistema calculará x1 e x2
+if(delta < 0):
+    print('Para delta menor que 0, não existem raizes no campo dos números reais.')
+elif(delta == 0):
+    print('Para delta = 0, existe apenas uma raiz.')
+    x = ((-b + (math.sqrt(delta)))/ 2 * a)
+    print("Valor de X = ", x)
+else:
+    x1 = ((-b + (math.sqrt(delta)))/ 2 * a)
+    x2 = ((-b - (math.sqrt(delta)))/ 2 * a)
+    print('Valor de x1 = ', x1)
+    print('Valor de x2 = ', x2)
